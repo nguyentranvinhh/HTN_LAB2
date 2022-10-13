@@ -28,11 +28,11 @@ void pollingButton(void * parameters){
 	for(;;){
 		configure_button();
 		current_state = gpio_get_level(PUSH_BUTTON_PIN);
-    	if (last_state == 1 && current_state == 0){
-    		printf("esp32\n");
-    	}
-    	last_state = current_state;
-    	vTaskDelay(10 / portTICK_PERIOD_MS);
+    		if (last_state == 1 && current_state == 0){
+    			printf("esp32\n");
+    		}
+    		last_state = current_state;
+    		vTaskDelay(10 / portTICK_PERIOD_MS);
 	}
 
 	vTaskDelete(NULL);
